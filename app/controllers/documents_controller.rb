@@ -23,8 +23,9 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # GET /documents/:id
-  def show; end
+  def show
+    @keywords = @document.keywords
+  end
 
   private
 
@@ -33,7 +34,6 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through
   def document_params
     params.require(:document).permit(:file)
   end

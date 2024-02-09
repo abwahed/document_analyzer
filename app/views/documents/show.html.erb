@@ -3,11 +3,21 @@
 <div>
   <%= @document.content %>
 </div>
+<br>
 
 <div>
-  <%= @document.summary %>
+  <strong>Summary:</strong> <%= @document.summary %>
 </div>
+<br>
 
 <div>
-  <%= @document.sentiment %>
+  <strong>Sentiment:</strong> <%= @document.sentiment %>
+</div>
+<br>
+
+<div>
+  <strong>Top Keywords:</strong><br>
+  <% @keywords.each do |keyword| %>
+    <div>Name: <%= keyword.name %>, Frequency: <%= keyword.frequency %></div><br>
+  <% end %>
 </div>
